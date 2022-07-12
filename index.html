@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kółko i krzyżyk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="page">
+    <div class="wrap">
+    </div>
+    <div class="game">
+        <h2 class="game__h2">Kolej gracza <span class="game__actual-player">X</span></h2>
+        <div class="table">
+            <div class="table__cell" id="0"></div>
+            <div class="table__cell" id="1"></div>
+            <div class="table__cell" id="2"></div>
+            <div class="table__cell" id="3"></div>
+            <div class="table__cell" id="4"></div>
+            <div class="table__cell" id="5"></div>
+            <div class="table__cell" id="6"></div>
+            <div class="table__cell" id="7"></div>
+            <div class="table__cell" id="8"></div>
+        </div>
+        <button class="game__button-reset">RESET</button>
+    </div>
+    <div class="scores">
+        <h3 class="scores__h3">Wyniki</h3>
+        <table class="scores__table">
+            <thead class="scores__headers">
+                <tr class="scores__row">
+                    <th class="scores__header">Znak</th>
+                    <th class="scores__header">Punkty</th>
+                </tr>
+            </thead>
+            <tbody class="scores__table-body">
+                <tr class="scores__row">
+                    <td class="scores__cell"><span class="scores__player-X">X</span></td>
+                    <td class="scores__cell"><span class="scores__score-X">0</span></td>
+                </tr>
+                <tr class="scores__row">
+                    <td class="scores__cell"><span class="scores__player-O">O</span></td>
+                    <td class="scores__cell"><span class="scores__score-O">0</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

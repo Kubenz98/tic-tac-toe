@@ -1,0 +1,250 @@
+@import 'variables';
+
+.page {
+    background-color: rgb(94, 94, 94);
+    font-family: roboto, sans;
+    color: map-get($colors, font)
+}
+
+.game {
+    max-width: 1024px;
+    transition: 0.5s;
+    margin: 0 auto;
+    overflow-y: hidden;
+    text-align: center;
+
+    &__h2 {
+        font-size: 38px;
+        color: map-get($colors, font);
+        margin-top: 20px;
+
+        @media(min-width: 360px) {
+            margin: 10px auto;
+        }
+    }
+
+    &__actual-player {
+        color: map-get($colors, X);
+    }
+
+    &__button-reset {
+        margin-top: 20px;
+        padding: 15px 25px;
+        font-size: 20px;
+        border-radius: 10px;
+        border: none;
+        color: white;
+        background-color: map-get($colors, button);
+        cursor: pointer;
+        transition: 0.2s;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background-color: white;
+                color: black;
+            }
+        }
+
+        @media (min-width: 768px) {
+            font-size: 36px;
+        }
+    }
+
+    @media(min-width: 360px) {
+        max-height: 620px;
+        transition: 0.5s;
+        margin: 0 auto;
+        overflow-y: hidden;
+    }
+
+    @media (min-width: 410px) {
+        max-height: 720px;
+    }
+
+}
+
+.table {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 231px;
+    height: 231px;
+    margin: 0 auto;
+    border-top: 2px solid map-get($colors, border);
+    border-left: 2px solid map-get($colors, border);
+
+    &__cell {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 75px;
+        height: 75px;
+        border-bottom: 2px solid map-get($colors, border);
+        border-right: 2px solid map-get($colors, border);
+        cursor: pointer;
+        transition: 0.5s;
+
+        @media(min-width: 360px) {
+            width: 90px;
+            height: 90px;
+        }
+
+        @media(min-width: 410px) {
+            width: 110px;
+            height: 110px;
+        }
+
+        @media(min-width: 768px) {
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    @media (min-width: 360px) {
+        width: 276px;
+        height: 276px;
+    }
+
+    @media (min-width: 410px) {
+        width: 336px;
+        height: 336px;
+    }
+
+    @media (min-width: 768px) {
+        width: 456px;
+        height: 456px;
+    }
+}
+
+.X {
+    display: block;
+    height: 75px;
+    width: 5px;
+    background-color: map-get($colors, X);
+    transform: rotate(45deg);
+    transition: 1s;
+
+    &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 75px;
+        width: 5px;
+        background-color: map-get($colors, X);
+        top: 0;
+        left: 0;
+        transform: rotate(90deg);
+        transition: 1s;
+    }
+
+    @media(min-width: 360px) {
+
+        &,
+        &::before {
+            height: 90px;
+        }
+    }
+
+    @media(min-width: 410px) {
+
+        &,
+        &::before {
+            height: 110px;
+        }
+
+        @media(min-width: 768px) {
+
+            &,
+            &::before {
+                height: 150px;
+                width: 8px;
+            }
+        }
+    }
+}
+
+.O {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 57.5px;
+    height: 57.5px;
+    border: 3.5px solid map-get($colors, O);
+    border-radius: 50%;
+    transition: 1s;
+
+    @media(min-width: 360px) {
+        width: 69px;
+        height: 69px;
+    }
+
+    @media(min-width: 410px) {
+        width: 79px;
+        height: 79px;
+    }
+
+    @media(min-width: 768px) {
+        width: 109px;
+        height: 109px;
+        border: 6px solid map-get($colors, O);
+    }
+}
+
+.scores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 5px auto 0;
+    text-align: center;
+
+    &__h3 {
+        margin: 0 0 10px 0;
+        font-size: 34px;
+        @media (min-width: 768px) {
+            font-size: 56px;
+        }
+    }
+
+    &__player-X {
+        color: map-get($colors, X);
+    }
+
+    &__player-O {
+        color: map-get($colors, O);
+    }
+
+    &__table {
+        border-spacing: 0 0px;
+        border-top: 1px solid map-get($colors, border);
+        border-left: 1px solid map-get($colors, border);
+    }
+
+    &__header {
+        padding: 5px 10px;
+        font-size: 26px;
+        border-right: 1px solid map-get($colors, border);
+        border-bottom: 1px solid map-get($colors, border);
+    }
+
+    &__cell {
+        font-size: 26px;
+        border-right: 1px solid map-get($colors, border);
+        border-bottom: 1px solid map-get($colors, border);
+        @media (min-width: 768px) {
+            font-size: 38px;
+        }
+    }
+
+    &__player-X, &__player-O, &__score-X, &__score-O {
+        @media(min-width: 760px) {
+            font-size: 34px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        margin: 20px auto;
+    }
+}
