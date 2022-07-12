@@ -129,7 +129,7 @@ class Game {
         this.cells = [...document.querySelectorAll(".table__cell")];
         this.scoreX = document.querySelector(".scores__score-X");
         this.scoreO = document.querySelector(".scores__score-O");
-        this.btnReset = document.querySelector(".game__button-reset")
+        this.btnReset = document.querySelector(".button--reset")
         this.player = new Player()
         this.result = new Result(this.player.player);
         this.stats = new Stats();
