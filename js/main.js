@@ -9,13 +9,29 @@ class Create {
 }
 
 class Player {
-    constructor() {
+    constructor(buttonPlay, playerXCell, playerOCell, playerXInput, playerOInput) {
         this.player = "X"
+
+        this.buttonPlay = buttonPlay;
+        this.playerXCell = playerXCell;
+        this.playerOCell = playerOCell;
+        this.playerXInput = playerXInput;
+        this.playerOInput = playerOInput;
     }
     change() {
         if (this.player === "X") {
             this.player = "O"
         } else if (this.player === "O") this.player = "X"
+    }
+    addNames() {
+        this.buttonPlay.addEventListener("click", () => {
+            if (!this.playerXInput.value || !this.playerOInput.value) { 
+                return alert("Wpisz imię!")
+            }
+            this.playerXCell.textContent = this.playerXInput.value;
+            this.playerOCell.textContent = this.playerOInput.value;
+            game.opening()
+        })
     }
 }
 
@@ -123,6 +139,13 @@ class Stats {
 
 class Game {
     constructor() {
+        this.btnPlay = document.querySelector(".button--start");
+        this.startView = document.querySelector(".start");
+        this.blur = document.querySelector(".blur");
+        this.playerXCell = document.querySelector(".scores__name-X");
+        this.playerOCell = document.querySelector(".scores__name-O");
+        this.playerXInput = document.querySelector(".start__input-X")
+        this.playerOInput = document.querySelector(".start__input-O")
         this.h2 = document.querySelector("h2");
         this.h2resetContent = this.h2.innerHTML;
         this.playerSpan = document.querySelector(".game__actual-player");
@@ -130,7 +153,7 @@ class Game {
         this.scoreX = document.querySelector(".scores__score-X");
         this.scoreO = document.querySelector(".scores__score-O");
         this.btnReset = document.querySelector(".button--reset")
-        this.player = new Player()
+        this.player = new Player(this.btnPlay, this.playerXCell, this.playerOCell, this.playerXInput, this.playerOInput)
         this.result = new Result(this.player.player);
         this.stats = new Stats();
         this.startGame();
@@ -138,6 +161,7 @@ class Game {
 
     }
     startGame() {
+        this.player.addNames();
         this.cells.forEach(cell => {
             cell.addEventListener("click", () => {
                 if (!this.result.finishedGame) {
@@ -169,6 +193,14 @@ class Game {
             })
             this.h2.innerHTML = this.h2resetContent;
         })
+    }
+    opening() {
+        setTimeout(() => {
+            this.startView.className = "start start--off";
+        }, 200)
+        setTimeout(() => {
+            this.blur.className = "blur blur--off";
+        }, 300)
     }
 }
 

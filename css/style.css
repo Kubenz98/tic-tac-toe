@@ -85,7 +85,7 @@
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-.blur-off {
+.blur--off {
   -webkit-transform: scale(0);
           transform: scale(0);
 }
