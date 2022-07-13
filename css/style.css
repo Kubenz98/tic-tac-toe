@@ -320,6 +320,9 @@
     font-size: 56px;
   }
 }
+.scores__name-X {
+  padding: 10px;
+}
 .scores__player-X {
   color: rgb(77, 219, 153);
 }
