@@ -6,6 +6,7 @@
   background-color: rgb(94, 94, 94);
   font-family: roboto, sans;
   color: #fff;
+  overflow: hidden;
 }
 
 .start {
@@ -32,6 +33,11 @@
   font-size: 46px;
   background-color: rgba(0, 0, 0, 0.2);
 }
+@media (min-width: 768px) {
+  .start__h1 {
+    font-size: 70px;
+  }
+}
 .start__span {
   text-shadow: 0 0 1px black;
 }
@@ -50,7 +56,19 @@
   border-radius: 10px;
   background-color: #eee;
 }
+@media (min-width: 410px) {
+  .start__input-X, .start__input-O {
+    width: 250px;
+  }
+}
+@media (min-width: 768px) {
+  .start__input-X, .start__input-O {
+    width: 300px;
+    font-size: 26px;
+  }
+}
 .start__input-X {
+  margin-top: 50px;
   margin-bottom: 20px;
 }
 .start__input-X::-webkit-input-placeholder, .start__input-O::-webkit-input-placeholder {
@@ -73,25 +91,6 @@
           transform: scale(0);
 }
 
-.blur {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  -webkit-filter: blur(20px);
-          filter: blur(20px);
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  z-index: 1;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-.blur--off {
-  -webkit-transform: scale(0);
-          transform: scale(0);
-}
-
 .button {
   padding: 15px 25px;
   font-size: 20px;
@@ -108,6 +107,11 @@
   margin: 35px auto;
   -webkit-box-shadow: 0 0 3px black;
           box-shadow: 0 0 3px black;
+}
+@media (min-width: 768px) {
+  .button--start {
+    width: 200px;
+  }
 }
 .button--reset {
   margin-top: 20px;

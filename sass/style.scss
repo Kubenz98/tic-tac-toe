@@ -8,6 +8,7 @@
     background-color: rgb(94, 94, 94);
     font-family: roboto, sans;
     color: map-get($colors, font);
+    overflow: hidden;
 }
 
 .start {
@@ -27,6 +28,9 @@
         text-align: center;
         font-size: 46px;
         background-color: rgba(0, 0, 0, 0.2);
+        @media (min-width: 768px) {
+            font-size: 70px;
+        }
     }
 
     &__span {
@@ -50,11 +54,21 @@
         border: 2px solid map-get($colors, button);
         border-radius: 10px;
         background-color: #eee;
-        // box-shadow: 0 0 10px 3px black;
+        @media (min-width: 410px) {
+            width: 250px;
+        }
+        @media (min-width: 768px) {
+            width: 300px;
+            font-size: 26px;
+        }
     }
 
     &__input-X {
+        margin-top: 50px;
         margin-bottom: 20px;
+        // @media (min-width: 768px) {
+        //     margin-top: 50px;
+        // }
     }
 
     &__input-X::placeholder,
@@ -66,25 +80,6 @@
         transform: scale(0);
     }
 }
-
-
-.blur {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    // backdrop-filter: blur(20px);
-    filter: blur(20px);
-    transform: scale(1);
-    z-index: 1;
-    transition: 0.5s;
-
-    &--off {
-        transform: scale(0);
-    }
-}
-
 
 
 .button {
@@ -101,6 +96,9 @@
         width: 40%;
         margin: 35px auto;
         box-shadow: 0 0 3px black;
+        @media (min-width: 768px) {
+            width: 200px;
+        }
     }
 
     &--reset {
