@@ -19,8 +19,7 @@
         <input type="text" class="start__input-O" placeholder="Imię gracza O">
         <button class="button button--start">Zagraj</button>
     </div>
-    <div class="blur"></div>
-    <div class="game">
+    <div class="game game--blur">
         <h2 class="game__h2">Kolej gracza <span class="game__actual-player">X</span></h2>
         <div class="table">
             <div class="table__cell" id="0"></div>
@@ -34,30 +33,30 @@
             <div class="table__cell" id="8"></div>
         </div>
         <button class="button button--reset">RESET</button>
-    </div>
-    <div class="scores">
-        <h3 class="scores__h3">Wyniki</h3>
-        <table class="scores__table">
-            <thead class="scores__headers">
-                <tr class="scores__row">
-                    <th class="scores__header">Imię</th>
-                    <th class="scores__header">Znak</th>
-                    <th class="scores__header">Punkty</th>
-                </tr>
-            </thead>
-            <tbody class="scores__table-body">
-                <tr class="scores__row">
-                    <td class="scores__cell"><span class="scores__name-X"></span></td>
-                    <td class="scores__cell"><span class="scores__player-X">X</span></td>
-                    <td class="scores__cell"><span class="scores__score-X">0</span></td>
-                </tr>
-                <tr class="scores__row">
-                    <td class="scores__cell"><span class="scores__name-O"></span></td>
-                    <td class="scores__cell"><span class="scores__player-O">O</span></td>
-                    <td class="scores__cell"><span class="scores__score-O">0</span></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="scores">
+            <h3 class="scores__h3">Wyniki</h3>
+            <table class="scores__table">
+                <thead class="scores__headers">
+                    <tr class="scores__row">
+                        <th class="scores__header">Imię</th>
+                        <th class="scores__header">Znak</th>
+                        <th class="scores__header">Punkty</th>
+                    </tr>
+                </thead>
+                <tbody class="scores__table-body">
+                    <tr class="scores__row">
+                        <td class="scores__cell"><span class="scores__name-X"></span></td>
+                        <td class="scores__cell"><span class="scores__player-X">X</span></td>
+                        <td class="scores__cell"><span class="scores__score-X">0</span></td>
+                    </tr>
+                    <tr class="scores__row">
+                        <td class="scores__cell"><span class="scores__name-O"></span></td>
+                        <td class="scores__cell"><span class="scores__player-O">O</span></td>
+                        <td class="scores__cell"><span class="scores__score-O">0</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     </div>
     <script src="js/main.js"></script>

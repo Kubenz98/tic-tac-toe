@@ -141,7 +141,7 @@ class Game {
     constructor() {
         this.btnPlay = document.querySelector(".button--start");
         this.startView = document.querySelector(".start");
-        this.blur = document.querySelector(".blur");
+        this.blurredGame = document.querySelector(".game--blur");
         this.playerXCell = document.querySelector(".scores__name-X");
         this.playerOCell = document.querySelector(".scores__name-O");
         this.playerXInput = document.querySelector(".start__input-X")
@@ -199,7 +199,7 @@ class Game {
             this.startView.className = "start start--off";
         }, 200)
         setTimeout(() => {
-            this.blur.className = "blur blur--off";
+            this.blurredGame.className = "game";
         }, 300)
     }
 }

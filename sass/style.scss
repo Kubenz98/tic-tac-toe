@@ -3,6 +3,8 @@
 .page {
     margin: 0;
     padding: 0;
+    width: 100vw;
+    height: 100vh;
     background-color: rgb(94, 94, 94);
     font-family: roboto, sans;
     color: map-get($colors, font);
@@ -72,7 +74,8 @@
     left: 0;
     height: 100vh;
     width: 100vw;
-    backdrop-filter: blur(20px);
+    // backdrop-filter: blur(20px);
+    filter: blur(20px);
     transform: scale(1);
     z-index: 1;
     transition: 0.5s;
@@ -123,6 +126,10 @@
     overflow-y: hidden;
     text-align: center;
 
+    &--blur {
+        filter: blur(20px);
+    }
+
     &__h2 {
         font-size: 38px;
         color: map-get($colors, font);
@@ -139,14 +146,12 @@
 
 
     @media(min-width: 360px) {
-        max-height: 620px;
         transition: 0.5s;
         margin: 0 auto;
         overflow-y: hidden;
     }
 
     @media (min-width: 410px) {
-        max-height: 720px;
     }
 
 }
@@ -298,6 +303,9 @@
     }
 
     &__name-X {
+        padding: 10px;
+    }
+    &__name-O {
         padding: 10px;
     }
 
