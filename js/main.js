@@ -82,8 +82,7 @@ class Result {
         }
     }
 
-    ending(winCombo, cells) {
-        winCombo = this.winCombo;
+    ending(winCombo, cells, finished) {
         if (winCombo) {
             setTimeout(function () {
                 const wins1 = cells[winCombo[0]];
@@ -94,12 +93,18 @@ class Result {
                         cell.firstChild.style.opacity = 0.3;
                     }
                     if (cell.hasChildNodes() && cell === wins1 || cell.hasChildNodes() && cell === wins2 || cell.hasChildNodes() && cell === wins3) {
-                        console.log(cell);
                         cell.style.backgroundColor = "#444"
-
                     }
                 })
             }, 500)
+        }
+        if(finished && !winCombo) {
+            setTimeout(() => {
+                cells.forEach(cell => {
+                    cell.firstChild.style.opacity = 0.3;
+                })
+            },500)
+            
         }
     }
 }
@@ -172,7 +177,7 @@ class Game {
                         this.stats.updatePlayer(this.player.player, this.playerSpan);
                         this.stats.winner = this.result.checkWin();
                         this.stats.updateScores(this.h2, this.scoreX, this.scoreO, this.result.completed);
-                        this.result.ending(this.result.winCombo, this.cells);
+                        this.result.ending(this.result.winCombo, this.cells, this.result.finishedGame);
                     } else alert("To pole jest już zajęte!");
                 } else return
             })
