@@ -26,7 +26,7 @@ class Player {
     addNames() {
         this.buttonPlay.addEventListener("click", () => {
             if (!this.playerXInput.value || !this.playerOInput.value) { 
-                return alert("Wpisz imię!")
+                return alert("Choose your name!")
             }
             this.playerXCell.textContent = this.playerXInput.value;
             this.playerOCell.textContent = this.playerOInput.value;
@@ -131,13 +131,13 @@ class Stats {
         if (this.winner === "X") {
             this.scores.x++;
             xSpan.textContent = this.scores.x
-            h2.innerHTML = `Wygrana gracza <span style="color: rgb(77, 219, 153)">X</span>!`;
+            h2.innerHTML = `Player <span style="color: rgb(77, 219, 153)">X</span> wins!`;
         } else if (this.winner === "O") {
             this.scores.o++;
             oSpan.textContent = this.scores.o;
-            h2.innerHTML = `Wygrana gracza <span style="color: rgb(38, 126, 241)">O</span>!`;
+            h2.innerHTML = `Player <span style="color: rgb(38, 126, 241)">O</span> wins!`;
         } else if (completed === 9) {
-            h2.innerHTML = `Remis!`;
+            h2.innerHTML = `Draw!`;
         }
     }
 }
@@ -178,7 +178,7 @@ class Game {
                         this.stats.winner = this.result.checkWin();
                         this.stats.updateScores(this.h2, this.scoreX, this.scoreO, this.result.completed);
                         this.result.ending(this.result.winCombo, this.cells, this.result.finishedGame);
-                    } else alert("To pole jest już zajęte!");
+                    } else alert("This cell is already taken!");
                 } else return
             })
         })

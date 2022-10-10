@@ -37,13 +37,13 @@
         text-shadow: 0 0 1px black;
     }
 
-    &__span:first-child {
-        color: map-get($colors, O);
-    }
+    // &__span:first-child {
+    //     color: map-get($colors, O);
+    // }
 
-    &__span:last-child {
-        color: map-get($colors, X);
-    }
+    // &__span:last-child {
+    //     color: map-get($colors, X);
+    // }
 
     &__input-X,
     &__input-O {
@@ -66,9 +66,6 @@
     &__input-X {
         margin-top: 50px;
         margin-bottom: 20px;
-        // @media (min-width: 768px) {
-        //     margin-top: 50px;
-        // }
     }
 
     &__input-X::placeholder,
